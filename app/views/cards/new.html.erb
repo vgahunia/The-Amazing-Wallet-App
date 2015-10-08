@@ -1,0 +1,17 @@
+<h1>New Card Page</h1>
+<h4><%= @user.phone %></h4>
+
+
+<div class="box" id="card_info">
+	<%= form_for @card, :url => {action: :create, user_id: @user.id} do |f| %>
+        <%= f.text_field :account, :placeholder => "Account Number" %>
+        <br>
+        <%= f.text_field :card_type, :placeholder => "Type of Card" %>
+        <br>
+        <%= f.text_field :month, :placeholder => "Month(1-12)" %>
+        <br>
+        <%= f.text_field :year, :placeholder => "Year" %>
+        <br>
+        <%= f.submit "Create" %>
+    <% end %>
+</div>

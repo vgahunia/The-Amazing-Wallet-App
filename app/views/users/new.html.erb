@@ -1,0 +1,29 @@
+<h1>Wallet Application</h1>
+
+
+	<div class="box" id="user_info">
+	 <%= form_for User.new do |f| %>
+    <%= f.text_field :first, :placeholder => "First Name" %>
+    <br>
+    <%= f.text_field :last, :placeholder => "Last Name" %>
+    <br>
+    <%= f.text_field :phone, :placeholder => "Phone" %>
+    <br>
+    <%= f.text_field :balance, :placeholder => "Balance" %>
+    <br>
+    <%= f.text_field :email, :placeholder => "Email" %>
+    <br>
+    <%= f.submit "Create" %>
+   <% end %>
+  </div>
+
+
+  <!-- Display error messages if the user has any -->
+
+  <% if @user.errors.full_messages.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |error_message| %>
+      	<li><%= error_message%></li> <br />
+      <% end %>
+    </ul>
+  <% end %>

@@ -1,0 +1,23 @@
+<h4><%= @user.first %></h4>
+<h4><%= @user.last %></h4>
+<h4><%= @user.phone %></h4>
+<h4><%= @user.email %></h4>
+<h4><%= @user.balance %></h4>
+<h4>ID: <%= @user.id %></h4>
+
+<h1>Your card(s):</h1>
+
+<% if @user.cards.any? %>
+	<% @user.cards.each do |card| %>
+		<%= card.account %>
+		<%= card.card_type %>
+		<%= card.month %>
+		<%= card.year %>
+	<% end %>
+<% else %>
+		<h3>You currently have no cards attached to your account.</h3>
+<% end %>
+<br>
+
+<%= link_to "Add a card", new_card_path({user_id: @user.id}) %>
+
