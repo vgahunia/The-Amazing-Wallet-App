@@ -13,6 +13,8 @@
 		<%= card.card_type %>
 		<%= card.month %>
 		<%= card.year %>
+		<%= link_to "Share this card", users_path({user_id: @user.id, card_id: card.id}) %>
+		<br>
 	<% end %>
 <% else %>
 		<h3>You currently have no cards attached to your account.</h3>
@@ -20,6 +22,4 @@
 <br>
 
 <%= link_to "Add a card", new_card_path({user_id: @user.id}) %>
-
-<%= link_to "See Users List", users_path({user_id: @user.id}) %>
 

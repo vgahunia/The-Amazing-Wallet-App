@@ -18,6 +18,19 @@ class CardsController < ApplicationController
     end
   end
 
+  def share
+    user = User.find(params[:user_id])
+    card = Card.find(params[:card_id])
+    if user.cards << card
+      puts "ADDED THIS"
+      respond_to do |format|
+        format.js
+    end
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def card_params

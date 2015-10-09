@@ -1,14 +1,16 @@
-<h1>User List</h1>
-<%= @user.username %>
+
+
+<h3>Who would you like to share your card with?</h3>
+<%= @card.id %>
+<%= @user.id %>
 
 <ul>
 	<% @users.each do |user| %>
-		<li><%= user.first + " " + user.last %></li>
-		<li><%= user.id %></li>
+		<%= link_to "#{user.first} #{user.last}", share_path(user_id: user.id, card_id: @card.id), method: :post, remote: true %>
 		<br>
+		<div id="share_message"><div>
 	<% end %>
-	<%= link_to "Share your card" %>
 	<br>
 </ul>
 
-<%= link_to "BACK", root_path %>
+<%= link_to "BACK", @user %>
