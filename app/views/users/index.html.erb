@@ -1,1 +1,14 @@
-<h1>User List</h1> 
+<h1>User List</h1>
+<%= @user.username %>
+
+<ul>
+	<% @users.each do |user| %>
+		<li><%= user.first + " " + user.last %></li>
+		<li><%= user.id %></li>
+		<br>
+	<% end %>
+	<%= link_to "Share your card" %>
+	<br>
+</ul>
+
+<%= link_to "BACK", root_path %>

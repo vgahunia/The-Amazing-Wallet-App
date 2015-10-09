@@ -11,10 +11,10 @@ class CardsController < ApplicationController
 		@card = @user.cards.create(card_params)
     @card = Card.create(card_params)
     if @card.save
-      redirect_to root_path
+      redirect_to @user
     else
       puts "TEST"
-      render 'new'
+      redirect_to root_path
     end
   end
 
