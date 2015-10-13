@@ -1,0 +1,8 @@
+<header class="col-sm-12">
+	<h1>The Amazing Wallet App</h1>
+	<% if logged_in? %>
+		<ul class="nav col-sm-12">
+			<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+		</ul>
+	<% end %>
+</header>

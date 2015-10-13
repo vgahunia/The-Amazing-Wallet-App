@@ -1,21 +1,29 @@
-<h1>Wallet Application</h1>
 
 
-
-	<div class="box" id="user_info">
-	 <%= form_for User.new do |f| %>
-    <%= f.text_field :first, :placeholder => "First Name" %>
-    <br>
-    <%= f.text_field :last, :placeholder => "Last Name" %>
-    <br>
-    <%= f.text_field :phone, :placeholder => "Phone" %>
-    <br>
-    <%= f.text_field :balance, :placeholder => "Balance" %>
-    <br>
-    <%= f.text_field :email, :placeholder => "Email" %>
-    <br>
-    <%= f.submit "Create" %>
-   <% end %>
+	<div class="signin col-sm-12">
+    <div class="empty col-sm-2"></div>
+    <div id="signup_form" class="col-sm-4">
+      <h3>Sign Up Form</h3>
+  	 <%= form_for User.new do |f| %>
+      <%= f.text_field :first, :placeholder => "First Name" %>
+      <br>
+      <%= f.text_field :last, :placeholder => "Last Name" %>
+      <br>
+      <%= f.text_field :phone, :placeholder => "Phone" %>
+      <br>
+      <%= f.text_field :balance, :placeholder => "Balance" %>
+      <br>
+      <%= f.text_field :email, :placeholder => "Email" %>
+      <br>
+      <%= f.submit "Get Started!", class: "button" %>
+     <% end %>
+    </div>
+    <div class="col-sm-4" id="signup_plug">
+      <p>Do you even realize how AMAZING the Amazing Wallet App is?</p>
+      <p>(You probably don't.)</p>
+      <p>But you're about to find out!</p>
+    </div>
+    <div class="empty col-sm-2"></div>
   </div>
 
 
