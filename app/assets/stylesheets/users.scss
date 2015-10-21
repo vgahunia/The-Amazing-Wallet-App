@@ -162,15 +162,22 @@ header h1 {
 
 #user_info {
 	background-color: white;
-	width: 600px;
 	margin: 10px auto;
 	border: 2px solid $red;
 	text-align: center;
+	h2 {
+		border-bottom: 3px solid $red;
+	}
+}
+
+.info_label {
+	color: $green;
 }
 
 #card_info {
 	background-color: white;
-	width: 600px;
 	margin: 10px auto;
 	border: 2px solid $red;
 }
+
+

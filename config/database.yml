@@ -20,10 +20,10 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:   
-adapter: postgresql   
-pool: 5   timeout: 5000   
-database: vivek   
-username: vivek   
-host: localhost   
-encoding: unicode
+# production:   
+# adapter: postgresql   
+# pool: 5   timeout: 5000   
+# database: vivek   
+# username: vivek   
+# host: localhost   
+# encoding: unicode
