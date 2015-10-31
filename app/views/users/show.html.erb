@@ -8,20 +8,34 @@
 					<h2><%= @user.first %> <%= @user.last %></h2>
 				</div>
 			</div>
-			<h4><span class="info_label">Phone:</span> <%= @user.phone %></h4>
-			<h4><span class="info_label">Email:</span> <%= @user.email %></h4>
-			<h4><span class="info_label">Current Balance:</span> <%= @user.balance %></h4>
-			<h4><span class="info_label">ID:</span> <%= @user.id %></h4>
+			<div class="row">
+				<div class="col-md-6" id="user_info_left">
+					<h4><span class="info_label">Phone:</span></h4>
+					<h4><span class="info_label">Email:</span></h4>
+					<h4><span class="info_label">Current Balance:</span></h4>
+					<h4><span class="info_label">ID:</span></h4>
+				</div>
+				<div class="col-md-6" id="user_info_right">
+					<h4><%= @user.phone %></h4>
+					<h4><%= @user.email %></h4>
+					<h4><%= @user.balance %></h4>
+					<h4><%= @user.id %></h4>
+				</div>
+			</div>
 		</div>
 
 		<div id="card_info">
-			<h1>Your card(s):</h1>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<h2>Your card(s):</h2>
+				</div>
+			</div>
 			<% if @user.cards.any? %>
 				<% @user.cards.each do |card| %>
 					<%= card.account %>
-					<%= card.card_type %>
-					<%= card.month %>
-					<%= card.year %>
+					<%= card.card_type %><br>
+					<%= card.month %><br>
+					<%= card.year %><br>
 					<%= link_to "Share this card", users_path({user_id: @user.id, card_id: card.id}) %>
 					<br>
 				<% end %>
