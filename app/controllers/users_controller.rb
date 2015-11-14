@@ -21,25 +21,10 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
-		if @user 
-			@user = User.find(params[:user_id])
-		end
+		@user = User.find(params[:user_id])
 		@card = Card.find(params[:card_id])
 	end
 
-	# def create
-	# 	if !params[:user].nil?
- #            @user = User.new(params[:user])
- #            if @user.save
- #              if @user.errors.full_messages.any? 
- #                  flash[:alert] = @user.errors.messages[:email]
- #              end
- #              redirect_to '/' 
- #            end
- #        else
- #            @user = User.new
- #        end
- #    end
 
   private
 

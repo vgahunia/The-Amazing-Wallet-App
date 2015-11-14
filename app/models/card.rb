@@ -4,5 +4,6 @@ class Card < ActiveRecord::Base
 	has_many :usercards
 
 	validates :month, length: { maximum: 2 }
+	validates :day, length: { maximum: 2 }
 
 end

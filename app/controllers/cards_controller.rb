@@ -25,7 +25,7 @@ class CardsController < ApplicationController
       puts "ADDED THIS"
       respond_to do |format|
         format.js
-    end
+      end
     else
       redirect_to root_path
     end

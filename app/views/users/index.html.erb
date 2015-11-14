@@ -1,16 +1,21 @@
 
+<div class="row" id="index_heading">
+	<div class="col-lg-offset-4 col-lg-4">
+		<h3><span class="bold"><%= @user.first %></span>, who would you like to share your card with?</h3> 
+	</div>
+</div>
 
-<h3>Who would you like to share your card with?</h3>
-<%= @card.id %>
-<%= @user.id %>
+<div class="row">
+	<div class="col-lg-offset-4 col-lg-4">
+		<ul>
+			<% @users.each do |user| %>
+				<%= link_to "#{user.first} #{user.last}", share_path(user_id: user.id, card_id: @card.id), method: :post, remote: true %>
+				<br>
+				<div id="share_message"><div>
+			<% end %>
+			<br>
+		</ul>
 
-<ul>
-	<% @users.each do |user| %>
-		<%= link_to "#{user.first} #{user.last}", share_path(user_id: user.id, card_id: @card.id), method: :post, remote: true %>
-		<br>
-		<div id="share_message"><div>
-	<% end %>
-	<br>
-</ul>
-
-<%= link_to "BACK", @user %>
+		<%= link_to "BACK", @user %>
+	</div>
+</div>
